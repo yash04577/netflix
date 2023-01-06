@@ -1,0 +1,220 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.dropdown{
+  display: none;
+}
+
+li ,a{
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+
+a:hover{
+  /* border: 1px solid white; */
+  color: rgb(212, 95, 16);
+}
+
+.navbar {
+  background-color: black;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navListContainer ul {
+  display: flex;
+}
+
+.navListContainer li {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.navToolkitContainer {}
+
+.mainContainer {
+  /* border: 2px  solid red; */
+  display: flex;
+  flex-flow: column;
+  background-color: black;
+
+}
+
+.bannerContainer {
+  height: 60vh;
+}
+
+.bannerData {
+  position: absolute;
+  top: 120px;
+  width: 40vw;
+  margin-left: 3rem;
+}
+
+.bannerContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.bannerBtn{
+  margin-top: 2rem;
+}
+
+.playBtn{
+  width: 80px;
+  height: 30px;
+  margin-right: 1rem;
+  border: 0px;
+  transition: 1s;
+}
+.playBtn:hover{
+  width: 150px;
+  height: 50px;
+  font-size: large;
+}
+
+.my_list_add_btn{
+  width: 80px;
+  height: 30px;
+  border: 0px;
+  background-color: rgb(31, 25, 25);
+  color: white;
+  transition: 1s;
+}
+
+.my_list_add_btn:hover{
+  width: 150px;
+  height: 50px;
+  font-size: large;
+}
+
+.popularMoviesContainer {
+  color: white;
+}
+
+.moviesList {
+  display: flex;
+  overflow: scroll;
+  scrollbar-width: none;
+
+}
+
+.moviesList::-webkit-scrollbar {
+  display: none;
+}
+
+
+.movieCard {
+  width: 275px;
+  height: 185px;
+  margin-right: 1rem;
+}
+
+.movieCard img{
+  width: 250px;
+}
+
+.movieCard :hover{
+  border: 2px solid white;
+}
+
+
+footer{
+  background-color: black;
+  color: grey;
+  height: 60vh;
+}
+
+table{
+  width: 90%;
+  margin: 3rem auto;
+  font-size: larger;
+  height: 50vh;
+}
+
+.showMoreBtn{
+  display: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+ 
+  .bannerData {
+    position: absolute;
+    top: 80px;
+    width: 50vw;
+    margin-left: 1rem;
+  }
+
+  .bannerPara{
+    max-height: 20vh;
+    overflow-y: hidden;
+    display: none;
+  }
+
+  .bannerContainer{
+    height: 30vh;
+  }
+
+  table{
+    font-size: small;
+    margin-left: 2rem;
+  }
+
+  td{
+    display: flex;
+  }
+
+  .navbar{
+    max-width: 100vw;
+    height: 7vh;
+    overflow-x: hidden;
+  }
+
+  .navListContainer{
+    display: none;
+  }
+
+  .menuBtnContainer{
+    position: absolute;
+    left: 280px;
+    top: 15px;
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  .showMoreBtn{
+    display: block;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+  }
+
+  .dropdown{
+    position: absolute;
+    left: 250px;
+    background-color: black;
+  }
+
+  .dropdown li{
+    margin-bottom: 1rem;
+  }
+
+}
