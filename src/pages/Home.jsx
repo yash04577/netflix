@@ -1,9 +1,12 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Card from '../components/Card'
+import MovieContext from '../context/MovieContext'
 
 const Home = () => {
 
+  const context = useContext(MovieContext);
+  // `https://api.themoviedb.org/3/search/movie?api_key=bf88552c594ba0ef3d778254b3ee4bfb&query=${context.getData()}`
   const [upcomingList, setUpcomingList] = useState([]);
   const [popularList, setPopularList] = useState([]);
   const [trendingList, setTrendingList] = useState([]);
@@ -16,6 +19,8 @@ const Home = () => {
   const trendingUrl = "https://api.themoviedb.org/3/movie/popular?api_key=bf88552c594ba0ef3d778254b3ee4bfb"
   const imgUrl = "https://image.tmdb.org/t/p/original";
 
+  const searchMovie = `https://api.themoviedb.org/3/search/movie?api_key=bf88552c594ba0ef3d778254b3ee4bfb&query=${context.getData()}`
+  console.log("movie name = ", context.getData());
   const fetchUpcoming = async () => {
 
     const {data} = await axios.get(upcomingUrl)
@@ -50,10 +55,8 @@ const Home = () => {
   }, [])
 
   return (
-    <>  
+    <>
       <div className="mainContainer">
-
-
       <div className="dropdown dropdownToggle" id='dropdown'>
           <ul>
             <li><a href="#">Home</a></li>
@@ -126,7 +129,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
     </>
   )
 }
